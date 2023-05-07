@@ -1,4 +1,4 @@
-from flask import Flask,render_template,send_file
+from flask import Flask,send_file
 from generator import generate_faces
 
 app=Flask(__name__)
