@@ -210,7 +210,7 @@ def generate_faces():
         # Convert to range [0,1] for plt.imshow()
         plt.imshow((generated_images[i,:,:,:]*0.5+0.5))
         plt.axis("off")
-    plt.imsave('static/generated_faces.png')
+    plt.savefig('static/generated_faces.png')
 
 
 
@@ -238,7 +238,7 @@ discriminator_optimizer = Adam(learning_rate=0.0002,beta_1=0.5)
 
 dcgan = DCGAN(seed_size,image_length,image_channels)
 dcgan.compile(generator_optimizer,discriminator_optimizer)
-dcgan.generator.load_weights('static/generator_weights-test.h5')
+dcgan.generator.load_weights('static/model/generator_weights-test.h5')
 
 if __name__=="__main__":
     generate_faces()
